@@ -20,8 +20,16 @@ async function addTask(data) {
     .insert(data)
 }
 
+async function projTasks(id) {
+  return await db('tasks')
+    .where('tasks.project_id', id)
+    .join('projects', 'projects.id', 'tasks.project_id')
+    .select('projects.name as project', 'tasks.desc as task')
+}
+
 async function projResources(id) {
   return await db('project_resource')
+    .where('project_resource.project_id', id)
     .join('projects', 'projects.id', 'project_resource.project_id')
     .join('resources', 'resources.id', 'project_resource.resource_id')
     .select('projects.name as project', 'resources.name as resource')
@@ -33,5 +41,6 @@ module.exports = {
   addTask,
   getAllTasks,
   projResources,
+  projTasks,
 
 }
