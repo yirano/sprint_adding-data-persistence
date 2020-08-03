@@ -1,13 +1,12 @@
 
 exports.up = async function (knex) {
-  await knex.schema.createTable('projects', table => {
+  await knex.schema.createTable('resources', table => {
     table.increments('id')
     table.text('name').notNull()
     table.text('desc')
-    table.bool('completed').default(false)
   })
 }
 
 exports.down = async function (knex) {
-  await knex.schema.dropTableIfExists('projects')
+  await knex.schema.dropTableIfExists('resources')
 }
