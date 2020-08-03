@@ -60,4 +60,17 @@ router.post('/:id/tasks', async (req, res, next) => {
   }
 })
 
+router.post('/:id/resources', async (req, res, next) => {
+  const resource = {
+    name: req.body.name,
+    desc: req.body.desc
+  }
+  try {
+    const newResource = await Projects.newResource(resource, req.params.id)
+    res.json(newResource)
+  } catch (error) {
+    next(error)
+  }
+})
+
 module.exports = router

@@ -35,6 +35,15 @@ async function projResources(id) {
     .select('projects.name as project', 'resources.name as resource')
 }
 
+async function newResource(data, projID) {
+  const newID = await db('resources')
+    .insert(data)
+  return await db('project_resource')
+    .insert({ resource_id: newID, project_id: projID })
+  // .join('projects', 'projects.id', 'project_resource.project_id')
+  // .select('projects.name as addedToProject')
+}
+
 module.exports = {
   getAllProjects,
   addProject,
@@ -42,5 +51,5 @@ module.exports = {
   getAllTasks,
   projResources,
   projTasks,
-
+  newResource
 }
