@@ -9,6 +9,8 @@ async function postResource(data) {
     .insert(data)
 }
 
+
+
 module.exports = {
   getAllResources,
   postResource,
