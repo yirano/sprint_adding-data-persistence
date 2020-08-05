@@ -1,0 +1,30 @@
+{
+  "name": "sprint_adding-data-persistence",
+  "version": "1.0.0",
+  "description": "**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yirano/sprint_adding-data-persistence.git"
+  },
+  "keywords": [],
+  "author": "Tiffany Arellano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yirano/sprint_adding-data-persistence/issues"
+  },
+  "homepage": "https://github.com/yirano/sprint_adding-data-persistence#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.2",
+    "node": "^14.5.0",
+    "sqlite3": "^5.0.0"
+  }
+}
